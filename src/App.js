@@ -1,9 +1,12 @@
-import './App.css';
+import Home from './Pages/Home';
+import Menu from './Pages/Menu';
+
 
 function App() {
   return (
     <div>
-      <h1>Bory</h1>
+      <Home />
+      <Menu />
     </div>
   );
 }
