@@ -5,8 +5,10 @@ const Home  = () => {
     return (
         <div className="header">
             <img className="logo" src="/logo.svg"></img> 
-            <h2> Feed </h2>
-            <div className="line"></div>
+            <div className="description-line">
+                <h2> Feed </h2>
+                <div className="line"></div>
+            </div>
             <Card />
             <Card />
             <Card />
@@ -25,8 +27,8 @@ const Card =() =>{
 
                                 <div className="title-container">
                                     <img className="avatar" alt="avatar" src="https://yt3.ggpht.com/ytc/AAUvwnht6c9eAFl7xdGc798TcXnHz0xZhwM9tmQ99AqO1g=s68-c-k-c0x00ffffff-no-rj"></img>
+                                  <h3>Titulo post</h3>
                                 </div>
-                                <h3>Titulo post</h3>
                             </div>
                     </div>
     )
