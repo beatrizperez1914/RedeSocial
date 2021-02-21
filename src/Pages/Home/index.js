@@ -4,7 +4,6 @@ import './style.css'
 const Home  = () => {
     return (
         <div className="header">
-            <img className="logo" src="/logo.svg"></img> 
             <div className="description-line">
                 <h2> Feed </h2>
                 <div className="line"></div>

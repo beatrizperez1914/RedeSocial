@@ -5,8 +5,8 @@ import Menu from './Pages/Menu';
 function App() {
   return (
     <div>
-      <Home />
       <Menu />
+      <Home />
     </div>
   );
 }

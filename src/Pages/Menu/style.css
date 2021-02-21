@@ -1,8 +1,8 @@
-.side-bar{
+.sidebar{
     height: 100vh;
-    width: 129px;
+    width: 250px;
     position: fixed;
     z-index: 1;
-    background-color: rgb(224, 207, 207);
     top: 0;
+    box-shadow: 1px 2px 3px;
 }

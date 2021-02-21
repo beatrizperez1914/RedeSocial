@@ -1,15 +1,14 @@
 import React from 'react';
-import './style.css'
+import './reset.css';
+import './style.css';
 
-const Menu = () => {
+function Menu() {
     return (
-        <div>
-           <ul className="side-bar"> 
-                <li>Lista de Post</li>
-                <li>Novo Post</li>
-           </ul>
-        </div>
-    )
+        <ul className="sidebar">
+            <li>Feed </li>
+            <li>Novo Post</li>
+        </ul>
+    );
 }
 
 
