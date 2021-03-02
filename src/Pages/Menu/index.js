@@ -1,17 +1,13 @@
 import React from 'react';
 import './style.css';
 
-function Menu(props, clickMenu) {
-
-    const{list=[]} = props;
+function Menu({ list = [], clickMenu }) {
 
     return (
         <ul className="sidebar">
             <img src ="logotipo.svg"></img>
             {
-                props.list.map((item)=> (
-                    <li key={item.id} id={item.id} className="item" onClick={clickMenu}>{item.title} </li>
-                ))
+                list.map(item => <li key={item.id} id={item.id} className="item" onClick={clickMenu} > {item.title} </li>)
             }
             
         </ul>
@@ -20,3 +16,4 @@ function Menu(props, clickMenu) {
 
 
 export default Menu
+

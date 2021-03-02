@@ -20,6 +20,31 @@
     box-shadow: 1px 2px 5px #648f71;
     width: 364px;
     height: 381px;
+
+}
+.title-box h1{
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.title-box h2{
+    font-weight: 250;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    font-style: italic;
+}
+
+.title-box {
+    padding:  0 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-card p{
+    padding: 0 8px;
+    text-align: justify;
 }
 
 .home-card>img {
@@ -48,6 +73,7 @@
     color: #6d9c7b;
    
 }
+
 .description-line{
     display: flex;
     flex-direction: column;
