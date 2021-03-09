@@ -1,6 +1,7 @@
 import React,{useState} from 'react';
 import Home from './Pages/Home';
 import Menu from './Pages/Menu';
+import Form from './Pages/form';
 
   const MENU_LIST = [
     {id: 'videoList', title: 'Feed' },
@@ -8,7 +9,7 @@ import Menu from './Pages/Menu';
   ]
 
 function App() {
-  const [menuId, setMenuId] = useState(MENU_LIST[0].id);
+  const [menuId, setMenuId] = useState(MENU_LIST[1].id);
   const handlerMenuSelect = (evento) => {
     setMenuId(evento.target.id);
   }
@@ -19,7 +20,7 @@ function App() {
       {
         menuId === 'videoList' ?
         <Home /> :
-        <h1>Pagina de cadastro</h1>
+        <Form />
 
       }
 

@@ -1,9 +1,10 @@
 /*Header*/
 
 .header{
-    width: 100%;
+    
     overflow: hidden; /* não deixa ter rolagem para os lados */
     position: relative;
+    padding-left: 251px;
 }
 
 .home-container{
@@ -30,7 +31,7 @@
 
 .title-box h2{
     font-weight: 250;
-    font-size: 0.9rem;
+    font-size: 13px;
     letter-spacing: 1px;
     font-style: italic;
 }
@@ -40,11 +41,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 0, 8px;
 }
 
 .home-card p{
     padding: 0 8px;
     text-align: justify;
+    display: -webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient: vertical;
+    line-height: 1.1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .home-card>img {
