@@ -1,39 +1,51 @@
-.form-container{
-    padding-left: 251px;
-}
 
-.description-line>h2{
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 500;
-    font-size: 30px;
-    margin-bottom: 8px;
-    letter-spacing: 5px;
-    color: #6d9c7b;
-   
-}
-
-.description-line{
+.form-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    width: 90%;
     align-items: center;
-    margin: 35px;
+    padding-left: 180px;
 }
 
-.line{
-    width: 100%;
-    max-width: 50%;
-    background-color: #fff;
-    height: .1rem;
-    background-color: #fff;
-    box-shadow: 0.1rem 0.1rem 1px  #6d9c7b;
+.form-container>h1 {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.form-container>form {
     display: flex;
-}
-
-.form-container>form{
-    display: flex ;
+    flex-direction: column;
     padding: 8px;
     width: 600px;
-    margin: auto;
+    margin: auto
+}
 
+.form-group {
+    display: flex;
+    padding: 8px;
+    align-items: baseline;
+}
+
+.form-group>input {
+    flex-grow: 1;
+    margin-left: 8px;
+    padding: 8px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group>label {
+    width: 75px;
+}
+
+.form-container button {
+    width: 100px;
+    margin-left: auto;
+    margin-right: 8px;
+    padding: 8px;
+    border-radius: 5px;
+   
+    transition: all 0.4s;
 }
