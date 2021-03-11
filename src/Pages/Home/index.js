@@ -1,31 +1,23 @@
-import React, { useState } from 'react';
-import './style.css'
+import React, { useState, useEffect} from 'react';
+import './style.css';
+import '../../services/api';
+import api from '../../services/api';
 
-const DEFAULT_LIST = [
-    {
-        title: 'Primeiro Post da pagina ',
-        imageurl: 'https://images.unsplash.com/photo-1573246123716-6b1782bfc499?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=660&q=80',
-        userAvatar: 'https://yt3.ggpht.com/ytc/AAUvwnht6c9eAFl7xdGc798TcXnHz0xZhwM9tmQ99AqO1g=s68-c-k-c0x00ffffff-no-rj',
-        date: new Date,
-        description: 'Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina Amo coisa saudável, amo essa rotina '
-    },
-    {
-        title: 'Primeiro Post da pagina ',
-        imageurl: 'https://images.unsplash.com/photo-1612884133038-b1f2b8e87980?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80',
-        userAvatar: 'https://yt3.ggpht.com/ytc/AAUvwnht6c9eAFl7xdGc798TcXnHz0xZhwM9tmQ99AqO1g=s68-c-k-c0x00ffffff-no-rj',
-        date: new Date,
-        description: 'Amo coisa saudável, amo essa rotina nossaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
-    },
-    {
-        title: 'Primeiro Post da pagina ',
-        imageurl: 'https://images.unsplash.com/photo-1602882547632-fd009b7784c5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
-        userAvatar: 'https://yt3.ggpht.com/ytc/AAUvwnht6c9eAFl7xdGc798TcXnHz0xZhwM9tmQ99AqO1g=s68-c-k-c0x00ffffff-no-rj',
-        date: new Date,
-        description: 'Amo coisa saudável, amo essa rotina nossaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa ahahahahaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
-    }
-]
+
+
 const Home  = () => {
-    const [list, setList] = useState(DEFAULT_LIST)
+    const [list, setList] = useState([])
+
+    useEffect(() => {
+        api.getVideoList()
+        .then(list =>{
+            console.log('list', list)
+            setList(list)
+
+        })
+        
+    },[])
+
     return (
         <div className="header">
             <div className="description-line">
@@ -34,7 +26,7 @@ const Home  = () => {
             </div>
             {
                 list.map(row =>
-                    <Card {...row}/>     
+                    <Card key={row.id} {...row}/>     
                     )
             }
         </div>

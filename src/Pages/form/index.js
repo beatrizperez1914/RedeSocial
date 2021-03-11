@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './style.css'
+import './style.css';
+import api from '../../services/api';
 
 const DEFAULT_LIST = {
     title: '',
@@ -12,35 +13,41 @@ const DEFAULT_LIST = {
 
 const Index = () => {
 
-    const [values, setValues] = useState(DEFAULT_LIST);
+    const [values, setValues] = useState({DEFAULT_LIST});
 
     const handlerChange = (evento) =>{
-        setValues(values =>({...values, title: evento.target.value}))
+        setValues(values =>({...values,[evento.target.name]:  evento.target.value}))
     }
 
+    const handlerSubmit = (evento) =>{
+        evento.preventDefault();
+        api.addVideo(values);
+
+    }
+    
     return (
         <div className="form-container">
-            <div className="description-line">
+            <div className="description-line"> 
                 <h2> Novo de post </h2>
                 <div className="line"></div>
             </div>
-            <form>
+            <form onSubmit={handlerSubmit}>
                   <FormGroup
-                    required
+                    required 
                     name="title"
                     label="Titulo"
                     onChange={handlerChange}
                     value={values.title}
                 />
                 <FormGroup
-                    required
+                    required 
                     name="description"
                     label="Descrição"
                     onChange={handlerChange}
                     value={values.description}
                 />
                 <FormGroup
-                    required
+                    required 
                     name="date"
                     label="Data"
                     onChange={handlerChange}
@@ -48,11 +55,11 @@ const Index = () => {
                     type="date"
                 />
                 <FormGroup
-                    required
+                   required
                     name="imageUrl"
                     label="Imagem"
                     onChange={handlerChange}
-                    value={values.imageUrl}
+                    value={values.imageurl}
                 />
                 <button type="submit">Enviar</button>
             </form>
@@ -60,11 +67,11 @@ const Index = () => {
     )
 }
 
-const FormGroup = ({value, name, onCharge, label}) => {
+const FormGroup = ({value, name, onCharge, label, ...others}) => {
     return(
         <div className="form-group">
-            <label htmlFor={name}>{label}:</label>
-            <input name={name} value={value} onCharge={onCharge}></input>
+            <label htmlFor={name}> {label}:</label>
+            <input name={name} value={value} onCharge={onCharge} {...others}></input>
         </div>
     )
 }
